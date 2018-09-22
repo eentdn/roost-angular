@@ -24,13 +24,11 @@ before_script:
 
 script:
 - npm run test -- --watch=false
-- xvfb-run npm run e2e
 
-after_success:
-  - if [ "$TRAVIS_BRANCH" == "master" ]; then
-    npm run build;
-    docker build -t eentdn/roost-angular -f nginx.conf .;
-    docker tag eentdn/roost-angular eentdn/roost-angular:$(git rev-parse --short HEAD);
-    docker login -u="eentdn13" -p="Een131178";
-    docker push eentdn/roost-angular;
-    fi
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: 3bdca7aabbcff24130a2473c61c4e87c5ecef81a
+  local_dir: dist
+  on:
+    branch: master
