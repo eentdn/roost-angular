@@ -24,6 +24,7 @@ before_script:
 
 script:
 - npm run test -- --watch=false
+- npm run build
 
 deploy:
   provider: pages
