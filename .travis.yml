@@ -24,7 +24,7 @@ before_script:
 
 script:
 - npm run test -- --watch=false
-- ng build -bh "https://eentdn.github.io/"
+- npm run build
 
 deploy:
   provider: pages
@@ -33,3 +33,4 @@ deploy:
   local_dir: dist
   on:
     branch: master
+  repo: eentdn/eentdn.github.io
