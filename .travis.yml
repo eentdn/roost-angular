@@ -24,7 +24,7 @@ before_script:
 
 script:
 - npm run test -- --watch=false
-- ng build -bh "https://eentdn.github.io/myapp3/"
+- ng build -bh "https://eentdn.github.io/"
 
 deploy:
   provider: pages
