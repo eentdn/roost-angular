@@ -19,12 +19,17 @@ before_install:
   - export DISPLAY=:99.0
   - sh -e /etc/init.d/xvfb start
 
+install:
+  - npm install -g yarn
+
 before_script:
 - npm install
 
 script:
 - npm run test -- --watch=false
-- npm run build
+- yarn lint
+- yarn build --base-href https://[ your github username ].github.io/my-awesome-project/
+
 
 deploy:
   provider: pages
