@@ -28,7 +28,7 @@ before_script:
 script:
 - npm run test -- --watch=false
 - yarn lint
-- yarn build --base-href https://[ your github username ].github.io/my-awesome-project/
+- yarn build --base-href https://eentdn.github.io/myapp3/
 
 
 deploy:
